@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南宫28 · 站点说明与产品概要</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(145deg, #f7e9d7 0%, #fce4cb 45%, #fde9d6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.5;
+      color: #2e241e;
+    }
+
+    .wrapper {
+      max-width: 960px;
+      width: 100%;
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 40px 40px 32px 32px;
+      box-shadow: 0 16px 48px -12px rgba(110, 70, 30, 0.2), 0 4px 12px rgba(0,0,0,0.04);
+      padding: 2.8rem 2.4rem;
+      margin-bottom: 2.5rem;
+      transition: box-shadow 0.2s;
+    }
+
+    /* 页眉 */
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #f0dcc5;
+      padding-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #b47c5c, #8f5e3b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #705743;
+      border-left: 4px solid #e0b693;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    /* 卡片区块 */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 20px;
+      background: linear-gradient(to bottom, #dba47a, #be8b64);
+      border-radius: 20px;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.8rem 0;
+    }
+
+    .feature-card {
+      background: #faf5ed;
+      border-radius: 24px;
+      padding: 1.6rem 1.5rem;
+      transition: transform 0.12s, box-shadow 0.12s;
+      border: 1px solid #efe3d5;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px -8px rgba(140, 90, 50, 0.15);
+    }
+
+    .feature-card h3 {
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #634d3b;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #3d322b;
+    }
+
+    .highlight-note {
+      background: #fcf4ea;
+      border-radius: 28px;
+      padding: 1.5rem 2rem;
+      margin: 1.6rem 0;
+      border-left: 4px solid #cf9c78;
+    }
+
+    .highlight-note p {
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item {
+      margin: 1.2rem 0;
+      padding: 0.2rem 0;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: #563f2e;
+    }
+
+    .faq-item p {
+      margin-left: 0.25rem;
+      color: #3f342b;
+      font-size: 0.95rem;
+    }
+
+    .link-button {
+      display: inline-block;
+      background: #be8b64;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.6rem 1.6rem;
+      border-radius: 60px;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 10px rgba(160, 100, 50, 0.2);
+    }
+
+    .link-button:hover {
+      background: #a5724b;
+      transform: scale(1.02);
+    }
+
+    .inline-link {
+      color: #9b6a44;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1.5px solid #dbb696;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .inline-link:hover {
+      color: #754f30;
+      border-bottom-color: #754f30;
+    }
+
+    .meta-footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed #dcc5b1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #756252;
+    }
+
+    /* 响应调整 */
+    @media (max-width: 680px) {
+      body {
+        padding: 1rem 0.8rem;
+      }
+      .wrapper {
+        padding: 1.8rem 1.2rem;
+        border-radius: 28px;
+      }
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .highlight-note {
+        padding: 1rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .feature-card {
+        padding: 1.2rem;
+      }
+      .section-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- hero 摘要 -->
+    <div class="hero">
+      <h1>南宫28 · 站点概述</h1>
+      <div class="sub">一份基于产品视角的说明与使用参考</div>
+    </div>
+
+    <!-- 介绍段落 -->
+    <p style="margin-bottom: 1.2rem; font-size: 1.02rem;">
+      <strong>南宫28</strong> 是一个聚焦于高效下载与资源整合的服务型站点，围绕实用工具、文档与常用软件提供清晰的获取路径。站点整体结构偏向轻量，内容经过初步归类，旨在缩短寻找时间，减少多余跳转。下面从几个侧面整理其主要特点与使用思路。
+    </p>
+
+    <!-- 亮点卡片（2列） -->
+    <div class="section-title">核心亮点</div>
+    <div class="grid-2col">
+      <div class="feature-card">
+        <h3>分类清晰 · 直达资源</h3>
+        <p>页面以模块化方式展示下载入口，常见需求（办公、系统、开发、多媒体）均设有独立区域，减少翻找成本。</p>
+      </div>
+      <div class="feature-card">
+        <h3>版本与说明标注</h3>
+        <p>多数资源附带版本号、更新日期或简要备注，方便使用者依据自身环境快速筛选，避免盲目下载。</p>
+      </div>
+      <div class="feature-card">
+        <h3>低干扰页面布局</h3>
+        <p>界面没有过度广告或弹层干扰，主要操作路径集中，适合需要专注获取文件的场景。</p>
+      </div>
+      <div class="feature-card">
+        <h3>适配多终端浏览</h3>
+        <p>页面采用响应式设计，在桌面、平板及手机端均保持基本可读性与可点按区域。</p>
+      </div>
+    </div>
+
+    <!-- 使用建议区块 -->
+    <div class="section-title" style="margin-top: 2rem;">使用建议</div>
+    <div class="highlight-note">
+      <p>▸ 建议优先查看各区块的标题与日期标记，确认资源是否为所需版本。</p>
+      <p>▸ 如需要特定语言或系统架构（32位/64位），请留意文件名或补充描述。</p>
+      <p>▸ 站点内容由运营方定期梳理，若遇链接失效可稍后再试，或通过站内导航反馈。</p>
+      <p style="margin-top: 0.6rem;">▸ 更多资源与分类更新可访问 <a href="https://downloads-nangong28.com" class="inline-link">南宫28</a> 直接浏览。</p>
+    </div>
+
+    <!-- 可信说明 + FAQ摘要 -->
+    <div class="section-title">关于可信度与常见疑问</div>
+    <div class="faq-item">
+      <strong>Q：站点资源安全吗？</strong>
+      <p>所有下载链接均指向第三方官方或经过核验的存储源，但不提供绝对保证。建议下载后自行使用安全软件扫描，尤其对于可执行文件。</p>
+    </div>
+    <div class="faq-item">
+      <strong>Q：是否需要注册或付费？</strong>
+      <p>目前浏览与下载均免费，无需账户。部分外链可能由原始平台控制访问权限，与本站无关。</p>
+    </div>
+    <div class="faq-item">
+      <strong>Q：更新频率如何？</strong>
+      <p>维护周期不固定，但热门资源会跟随上游版本进行更新，历史版本也可能保留。如需最新版本，可关注主页列表变化。</p>
+    </div>
+    <div class="faq-item">
+      <strong>Q：遇到无法下载怎么办？</strong>
+      <p>首先检查网络环境，其次尝试更换浏览器或关闭下载拦截插件。若持续失败，可尝试通过站内信息渠道（若有）反馈。</p>
+    </div>
+
+    <!-- 温和的访问说明链接 -->
+    <div style="margin: 2rem 0 0.8rem 0; text-align: center;">
+      <span style="display: inline-block; background: #f0e1d3; padding: 0.3rem 1rem 0.3rem 1.8rem; border-radius: 80px; font-size: 0.9rem;">
+        → 了解完整资源目录，请直接前往
+        <a href="https://downloads-nangong28.com" style="background: #be8b64; color: white; padding: 0.4rem 1.2rem; border-radius: 60px; text-decoration: none; margin-left: 0.6rem; font-weight: 500; display: inline-block;">南宫28</a>
+      </span>
+    </div>
+
+    <!-- 底部占位 -->
+    <div class="meta-footer">
+      <span>站点说明页 · 仅供参考</span>
+      <span>内容定期梳理 · 保持克制</span>
+    </div>
+
+  </div>
+  <!-- 简洁 footer -->
+  <div style="max-width: 960px; width: 100%; text-align: center; font-size: 0.75rem; color: #8c7b6b; padding: 0.4rem 0 1.2rem 0; border-top: none;">
+    本页为产品介绍式说明，所涉链接为 <a href="https://downloads-nangong28.com" style="color: #8f6a4b; text-decoration: underline;">南宫28</a> 官方地址
+  </div>
+</body>
+</html>
